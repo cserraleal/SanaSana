@@ -1,0 +1,33 @@
+# Node dependencies
+node_modules/
+
+# Build output
+dist/
+build/
+*.log
+
+# Environment variables
+.env
+.env.*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Vite cache
+.vite/
+
+# TypeScript cache
+*.tsbuildinfo
+
+# SQLite database
+data/*.sqlite
+
+# VS Code settings (optional, if you want to ignore workspace settings)
+.vscode/
+
+# Coverage reports
+coverage/
+
+# Misc
+*.local
