@@ -60,6 +60,22 @@ export const ClinicsFilters = ({
     onSortChange('name');
   };
 
+  const handleSpecialtyChange = (value: string) => {
+    if (value === 'all') {
+      onSpecialtyChange('');
+    } else {
+      onSpecialtyChange(value);
+    }
+  };
+
+  const handleLocationChange = (value: string) => {
+    if (value === 'all') {
+      onLocationChange('');
+    } else {
+      onLocationChange(value);
+    }
+  };
+
   return (
     <div className="space-y-6">
       <Card>
@@ -78,12 +94,12 @@ export const ClinicsFilters = ({
         <CardContent className="space-y-6">
           <div>
             <Label htmlFor="specialty">Especialidad</Label>
-            <Select value={selectedSpecialty} onValueChange={onSpecialtyChange}>
+            <Select value={selectedSpecialty || 'all'} onValueChange={handleSpecialtyChange}>
               <SelectTrigger>
                 <SelectValue placeholder="Todas las especialidades" />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="">Todas las especialidades</SelectItem>
+                <SelectItem value="all">Todas las especialidades</SelectItem>
                 {specialties.map((specialty) => (
                   <SelectItem key={specialty} value={specialty}>
                     {specialty}
@@ -95,12 +111,12 @@ export const ClinicsFilters = ({
 
           <div>
             <Label htmlFor="location">Ubicación</Label>
-            <Select value={selectedLocation} onValueChange={onLocationChange}>
+            <Select value={selectedLocation || 'all'} onValueChange={handleLocationChange}>
               <SelectTrigger>
                 <SelectValue placeholder="Todas las ubicaciones" />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="">Todas las ubicaciones</SelectItem>
+                <SelectItem value="all">Todas las ubicaciones</SelectItem>
                 {locations.map((location) => (
                   <SelectItem key={location} value={location}>
                     {location}

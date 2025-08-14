@@ -2,8 +2,15 @@ import * as React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Plus, Search, FileText, Settings } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 export const QuickActions = () => {
+  const navigate = useNavigate();
+
+  const handleSearchClinics = () => {
+    navigate('/clinics');
+  };
+
   return (
     <div className="space-y-6">
       <Card>
@@ -16,7 +23,11 @@ export const QuickActions = () => {
             Agendar Nueva Cita
           </Button>
           
-          <Button className="w-full justify-start" variant="outline">
+          <Button 
+            className="w-full justify-start" 
+            variant="outline"
+            onClick={handleSearchClinics}
+          >
             <Search className="h-4 w-4 mr-2" />
             Buscar Clínicas
           </Button>

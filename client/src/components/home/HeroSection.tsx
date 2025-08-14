@@ -10,6 +10,10 @@ export const HeroSection = () => {
     navigate('/signup');
   };
 
+  const handleViewClinics = () => {
+    navigate('/clinics');
+  };
+
   return (
     <section className="bg-gradient-to-br from-green-50 to-white py-20">
       <div className="container mx-auto px-4">
@@ -26,7 +30,7 @@ export const HeroSection = () => {
             <Button size="lg" className="text-lg px-8" onClick={handleGetStarted}>
               Comenzar Ahora
             </Button>
-            <Button variant="outline" size="lg" className="text-lg px-8">
+            <Button variant="outline" size="lg" className="text-lg px-8" onClick={handleViewClinics}>
               Ver Clínicas
             </Button>
           </div>
