@@ -5,6 +5,8 @@ import { LoginPage } from './pages/LoginPage';
 import { SignupPage } from './pages/SignupPage';
 import { PatientDashboard } from './pages/PatientDashboard';
 import { ClinicDashboard } from './pages/ClinicDashboard';
+import { ClinicsPage } from './pages/ClinicsPage';
+import { ClinicDetailPage } from './pages/ClinicDetailPage';
 import { Layout } from './components/Layout';
 
 function App() {
@@ -15,6 +17,8 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/signup" element={<SignupPage />} />
+          <Route path="/clinics" element={<ClinicsPage />} />
+          <Route path="/clinic/:id" element={<ClinicDetailPage />} />
           <Route path="/patient/dashboard" element={<PatientDashboard />} />
           <Route path="/clinic/dashboard" element={<ClinicDashboard />} />
         </Routes>
